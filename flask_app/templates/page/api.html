@@ -1,0 +1,23 @@
+{% extends "layout/default.html" %}
+
+{% block content %}
+    {% if login is defined %}
+    <div class="api" style="position:relative">
+        <h4>유저 이름 : {{login}}</h4>
+        <form id="model" method="post" action="/predict">
+            <ul>
+            <!-- 우측정렬!!! -->
+            {% for i in genres %}
+                <li><label for="genre{{i[0]}}">{{i[1]}}</label><input id="genre{{i[0]}}"name="{{i[0]}}" type="checkbox"></li>
+            {% endfor%}
+            </ul>
+            <button type="submit">제출</button>
+        </form>
+        {% if res is defined %}
+        <div style="position:absolute; left:12%; top:43px;">예측 별점: {{res}}</div>
+        {% endif %}
+    </div>
+    {% else %}
+        로그인부터 해주세요!
+    {% endif %}
+{% endblock %}

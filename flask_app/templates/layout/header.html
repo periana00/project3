@@ -1,0 +1,16 @@
+<ul class="hor">
+    <li><a href="/"><h1>HOME</h1></a></li>
+    <li><a href="/api"><h2>api</h2></a></li>
+    <li><a href="/dashboard"><h2>dashboard</h2></a></li>
+    <li id='login'>
+        {% if login is not defined %}
+        <form method="post" action="/login">
+            <input name="userid" placeholder="ID" required  autocomplete="off">
+            <button type="submit">sign in</button>
+        </form>
+        {% elif login is defined %}
+        <span>id: {{ login }}</span>
+        <button onclick="window.location.href='/logout'">logout</button>
+        {% endif %}
+    </li>
+</ul>

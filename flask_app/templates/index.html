@@ -1,0 +1,21 @@
+{% extends "layout/default.html" %}
+
+{% block content %}
+
+
+<h3>유명한 영화</h3>
+<table>
+    {% for i in top10movies %}
+    <tr><td>이름: {{i[1]}}</td><td>댓글: {{i[2]}}</td><td>평점: {{ i[3] }}</td></tr>
+    {% endfor %}
+</table>
+
+{% if login is defined %}
+
+<h3>사용자와 관련성이 높은 영화</h3>
+<span>- 미구현</span>
+
+
+{% endif %}
+
+{% endblock %}

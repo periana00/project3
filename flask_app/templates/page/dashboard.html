@@ -1,0 +1,32 @@
+{% extends "layout/default.html" %}
+
+{% block content %}
+
+<!-- style="position:relative; display:block; margin: 0 auto;" -->
+
+<div class="grid">
+    <iframe
+        src="{{iframeUrl3}}"
+        frameborder="0"
+        width="1600"
+        height="600"
+        allowtransparency
+    ></iframe>
+    <iframe
+        src="{{iframeUrl1}}"
+        frameborder="0"
+        width="800"
+        height="600"
+        allowtransparency
+    ></iframe>
+    <iframe
+        src="{{iframeUrl2}}"
+        frameborder="0"
+        width="800"
+        height="600"
+        allowtransparency
+    ></iframe>
+</div>
+
+
+{% endblock %}
